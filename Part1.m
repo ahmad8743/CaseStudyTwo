@@ -70,10 +70,20 @@ clear; clc;
 R = 1000; % 1000 ohms
 C = 10^(-6); % 1 microfarad
 
+% For the capacitor
 w = linspace(50, 1000, 1000); % As specified in the directions
-sol = 5 ./ sqrt(1 + (2 * pi * w * R * C).^2);
+sol_cap = 5 ./ sqrt(1 + (2 * pi * w * R * C).^2);
 
+% For the resistor
+sol_res = (10 * pi * w * R * C) ./ sqrt(1 + (2 * pi * w * R * C).^2);
+
+% Plot findings for both
 figure(3);
-plot(w, sol, 'LineWidth', 2);
-title('Graph of amplitude as a fucntion of frequency');
-exportgraphics(gcf, 'Part1Plots/freq.png');
+plot(w, sol_cap, 'LineWidth', 2);
+title('Graph of amplitude as a function of frequency (Capacitor)');
+exportgraphics(gcf, 'Part1Plots/freq_c.png');
+
+figure(4);
+plot(w, sol_res, 'LineWidth', 2);
+title('Graph of amplitude as a function of frequency (Resistor)');
+exportgraphics(gcf, 'Part1Plots/freq_r.png');

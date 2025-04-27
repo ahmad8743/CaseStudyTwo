@@ -9,6 +9,6 @@
 % Matthew Lew 10/25/2018
 
 function playSound(y, Fs)
-obj = audioplayer(y/max(abs(y)), Fs);
-playblocking(obj);
+    obj = audioplayer(y/max(abs(y)), Fs);
+    playblocking(obj);
 end
