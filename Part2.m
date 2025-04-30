@@ -19,9 +19,9 @@ grid on
 exportgraphics(gcf, 'Part2Plots/spectral.png');
 
 % Resistance and capacitance of low pass filter
-% Cutoff: say 6000Hz
+% Cutoff: say 2000Hz
 R1 = 1;
-C1 = 8 * 10^(-5);
+C1 = 7.95 * 10^(-5);
 
 lowPassScale = 1 ./ sqrt(1 + (2 * pi * R2 * C2 * F).^2);
 lowSpectral = lowPassScale.^2 .* spectral;
